@@ -12,6 +12,7 @@ async fn main() {
     let mut yoldmousepos = 1.0;
     let mut xnewmousepos = 1.0;
     let mut ynewmousepos = 1.0;
+    let radius = 40.0;
     loop{
     
 
@@ -33,15 +34,23 @@ async fn main() {
     yvelotiy = yvelotiy + gravity;
     }
     if x > screen_width()  {
-        x = screen_width() - 40.0;
-        xvelotiy = xvelotiy * - 0.75
-    }
-    if y > screen_height() {
-        y = screen_height() - 40.0;
-        yvelotiy = yvelotiy * -0.75
+        x = screen_width() - radius;
+        xvelotiy *= -0.75
+    }else if x < 0.0 {
+        x = radius;
+        xvelotiy *= -0.75;
         
     }
-    draw_circle(x,y, 40.0,WHITE, );
+    if y > screen_height() {
+        y = screen_height() - radius;
+        yvelotiy *=  -0.75
+        
+    }else if y < 0.0 {
+        y = radius; 
+        yvelotiy *= -0.75;
+
+    }
+    draw_circle(x,y, radius,WHITE, );
     next_frame().await;
 
     }
