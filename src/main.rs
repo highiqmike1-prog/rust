@@ -11,7 +11,11 @@ async fn main() {
 
     clear_background(BLACK);
     yvelotiy = yvelotiy + gravity;
-
+    if  is_mouse_button_down(MouseButton::Left){
+        (x,y) = mouse_position();
+      
+        
+    }
     y = y + yvelotiy;
     x = x +xvelotiy;
     if x > screen_width()  {
