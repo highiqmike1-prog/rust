@@ -4,21 +4,23 @@ async fn main() {
     let mut y = 0.0;
     let mut x = 2.0;
     let gravity = 0.5;
-    let mut velotiy = 1.0;
+    let mut yvelotiy = 1.0;
+    let mut xvelotiy = 1.0;
     loop{
     
 
     clear_background(BLACK);
-    velotiy = velotiy + gravity;
-    y = y + velotiy;
-    x = x + velotiy;
-    if x > screen_width() - 40.0 {
+    yvelotiy = yvelotiy + gravity;
+
+    y = y + yvelotiy;
+    x = x +xvelotiy;
+    if x > screen_width()  {
         x = screen_width() - 40.0;
-        velotiy = velotiy * - 0.75
+        xvelotiy = xvelotiy * - 0.75
     }
-    if y > screen_height() - 40.0 {
+    if y > screen_height() {
         y = screen_height() - 40.0;
-        velotiy = velotiy * -0.75
+        yvelotiy = yvelotiy * -0.75
         
     }
     draw_circle(x,y, 40.0,WHITE, );
