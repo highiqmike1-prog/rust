@@ -15,9 +15,10 @@ async fn main() {
         (x,y) = mouse_position();
       
         
-    }
+    }else {
     y = y + yvelotiy;
     x = x +xvelotiy;
+    }
     if x > screen_width()  {
         x = screen_width() - 40.0;
         xvelotiy = xvelotiy * - 0.75
@@ -29,5 +30,6 @@ async fn main() {
     }
     draw_circle(x,y, 40.0,WHITE, );
     next_frame().await;
+
     }
 }
