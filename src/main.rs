@@ -45,7 +45,7 @@ async fn main() {
         y = screen_height() - radius;
         yvelotiy *=  -0.75
         
-    }else if y < 0.0 {
+    }else if y < 1.0 {
         y = radius; 
         yvelotiy *= -0.75;
 
